@@ -3,15 +3,16 @@
   "private": true,
   "scripts": {
     "dev": "cross-env RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED=false next dev -p 7127",
-    "build": "next build",
+    "build": "pnpm next-on-pages",
     "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "pnpm build && wrangler pages deploy"
   },
   "dependencies": {
-    "@github/mini-throttle": "2.1.0",
     "@flow/epubjs": "workspace:*",
     "@flow/internal": "workspace:*",
+    "@github/mini-throttle": "2.1.0",
     "@literal-ui/core": "0.0.13",
     "@literal-ui/hooks": "0.0.8",
     "@literal-ui/next": "0.0.3",
@@ -47,6 +48,7 @@
     "valtio": "1.6.0"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "1.13.13",
     "@flow/tailwind": "workspace:*",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/line-clamp": "0.4.2",
@@ -59,7 +61,8 @@
     "next-transpile-modules": "9.0.0",
     "postcss": "8.4.12",
     "tailwindcss": "3.2.0",
-    "type-fest": "2.12.2"
+    "type-fest": "2.12.2",
+    "wrangler": "4.29.1"
   },
   "engines": {
     "node": ">=18.0.0"

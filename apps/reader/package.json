@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "cross-env RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED=false next dev -p 7127",
     "build": "next build",
-    "postbuild": "pnpm next-on-pages",
+    "cf:build": "npx @cloudflare/next-on-pages",
+    "cf:dev": "wrangler dev .mf/worker/index.js",
+    "cf:deploy": "wrangler deploy .mf/worker/index.js",
     "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",

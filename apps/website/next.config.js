@@ -1,8 +1,15 @@
+const { setupDevPlatform } = require('@cloudflare/next-on-pages/next-dev')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 const nextTranslate = require('next-translate')
 const withTM = require('next-transpile-modules')(['@flow/internal'])
+
+if (process.env.NODE_ENV === 'development') {
+  ;(async () => {
+    await setupDevPlatform()
+  })()
+}
 
 /**
  * @type {import('rehype-pretty-code').Options}

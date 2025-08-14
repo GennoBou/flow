@@ -4,6 +4,9 @@
   "scripts": {
     "dev": "next dev -p 7117",
     "build": "next build",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy",
     "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint"
@@ -30,12 +33,14 @@
     "shiki": "0.10.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "1.13.13",
     "@literal-ui/plugins": "0.0.3",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/line-clamp": "0.4.2",
     "@types/node": "17.0.22",
     "@types/react": "17.0.43",
     "autoprefixer": "10.4.4",
+    "eslint-plugin-next-on-pages": "1.13.13",
     "m3-tokens": "0.0.3",
     "next-transpile-modules": "9.0.0",
     "postcss": "8.4.12",

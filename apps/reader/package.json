@@ -4,6 +4,9 @@
   "scripts": {
     "dev": "cross-env RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED=false next dev -p 7127",
     "build": "next build",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy",
     "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint"
@@ -47,6 +50,7 @@
     "valtio": "1.6.0"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "1.13.13",
     "@flow/tailwind": "workspace:*",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/line-clamp": "0.4.2",
@@ -55,6 +59,7 @@
     "@types/react": "17.0.43",
     "@types/uuid": "8.3.4",
     "autoprefixer": "10.4.4",
+    "eslint-plugin-next-on-pages": "1.13.13",
     "next-pwa": "5.6.0",
     "next-transpile-modules": "9.0.0",
     "postcss": "8.4.12",

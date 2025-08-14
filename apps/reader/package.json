@@ -4,13 +4,9 @@
   "scripts": {
     "dev": "cross-env RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED=false next dev -p 7127",
     "build": "next build",
-    "cf:build": "npx @cloudflare/next-on-pages",
-    "cf:dev": "wrangler dev .mf/worker/index.js",
-    "cf:deploy": "wrangler deploy .mf/worker/index.js",
     "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "pnpm build && wrangler pages deploy"
+    "lint": "next lint"
   },
   "dependencies": {
     "@flow/epubjs": "workspace:*",
@@ -51,7 +47,6 @@
     "valtio": "1.6.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.13.13",
     "@flow/tailwind": "workspace:*",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/line-clamp": "0.4.2",

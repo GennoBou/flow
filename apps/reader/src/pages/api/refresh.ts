@@ -21,3 +21,5 @@ export default async function handler(
     accessTokenExpiresAt: dbx.auth.getAccessTokenExpiresAt(),
   })
 }
+
+export const config = { runtime: 'edge' }

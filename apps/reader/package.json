@@ -59,7 +59,6 @@
     "@types/react": "17.0.43",
     "@types/uuid": "8.3.4",
     "autoprefixer": "10.4.4",
-    "eslint-plugin-next-on-pages": "1.13.13",
     "next-pwa": "5.6.0",
     "next-transpile-modules": "9.0.0",
     "postcss": "8.4.12",
